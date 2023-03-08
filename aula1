@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class PrimeiroCodigo {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		double nota1, nota2, media;
+		Scanner sc = new Scanner(System.in); //pegar dados
+		double nota1, nota2, media; //declarando variaveis
 		System.out.println("Informe a nota da primeira prova: ");
-		nota1 = sc.nextDouble();
+		nota1 = sc.nextDouble();//atribuindo valor a elas 
 		System.out.println("Informe a nota da segunda prova: ");
 		nota2 = sc.nextDouble();
 		
