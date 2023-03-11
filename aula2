@@ -1,0 +1,56 @@
+package ucsal;
+
+import java.util.Scanner;
+
+public class Media {
+
+	//Problema: Elabore uma solução em JAVA para que, a partir de 03 valores informados
+	//em um intervalo fechado de 0 a 10, seja calculada a média aritmética desses valores
+	//. Ao final apresente o resultado.Para o resultado final considere que se a media 
+	//obtida for maior ou igual 6 apresente a informação APROVADO, caso contrário REPROVADO.
+	//Caso algum valor esteja fora do intervalo definido, a execução será finalizada 
+	//apresentando para o usuário "VALOR FORA DO INTERVALO"
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		final String ERRO = "Valor fora do intervalo";
+
+		double nota1, nota2, nota3, media;
+		System.out.println("Informe a nota da primeira nota: ");		
+		nota1 = sc.nextDouble();
+		//teste1
+		if(nota1 >= 0 && nota1 <=10) {
+
+			System.out.println("Informe a nota da segunda nota: ");		
+			nota2 = sc.nextDouble();
+			//teste2
+			if(nota2 >= 0 && nota2 <=10) {
+
+				System.out.println("Informe a nota da terceira nota: ");		
+				nota3 = sc.nextDouble();
+				//teste3
+				if(nota3 >= 0 && nota3 <=10) {
+
+					media = (nota1+nota2+nota3)/3;
+					if(media>=6) {
+						System.out.println("Aprovado");
+					}else {System.out.println("Reprovado");
+
+					}
+
+				}else { 
+					System.out.println(ERRO);
+				}
+
+			}else { 
+				System.out.println(ERRO);
+			}
+		}else { 
+			System.out.println(ERRO);
+		}
+
+
+	}
+
+}
