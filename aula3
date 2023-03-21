@@ -19,10 +19,12 @@ public class MediaPonderada {
 			mediaPon=(nota1*PESO1+nota2*PESO2)/(PESO1+PESO2);
 			if(mediaPon<=3){
 				System.out.println("Reprovado");
-			}else if(mediaPon>=6){
+			}else if(mediaPon>6){
 				System.out.println("Aprovado");
 			}else if(mediaPon>3 && mediaPon<6){
 				System.out.println("Prova final");
+			}else if(mediaPon==6){
+				System.out.println("Situação da nota 6 não definida");
 			}
 
 		}else {System.out.println("Informe um valor valido!");
