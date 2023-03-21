@@ -1,0 +1,32 @@
+package ucsal;
+
+import java.util.Scanner;
+
+public class MediaPonderada {
+
+	/*Apartir de duas notas informadas pelo usuario. Calcule a media ponderada considerando os pesos 3 e 7
+	 *Ao final informe se o aluno está aprovado ou não com base na seguinte regra: se a media <= 3 o aluno está reprovado,
+	 * se media > 3 ou <6 o aluno fará prova final e se a media>6 o aluno está aprovado*/
+	public static void main(String[] args) {
+		Scanner ent = new Scanner(System.in);
+		double nota1, nota2, mediaPon;
+		final double PESO1=3.0, PESO2=7.0;
+		System.out.println("Informe duas notas: ");
+		nota1=ent.nextDouble();
+		nota2=ent.nextDouble();
+		if(nota1>=0 && nota1<=10 && nota2>=0 && nota2<=10){
+
+			mediaPon=(nota1*PESO1+nota2*PESO2)/(PESO1+PESO2);
+			if(mediaPon<=3){
+				System.out.println("Reprovado");
+			}else if(mediaPon>6){
+				System.out.println("Aprovado");
+			}else if(mediaPon>3 && mediaPon<6){
+				System.out.println("Prova final");
+			}
+
+		}else {System.out.println("Informe um valor valido!");
+		}
+	}
+
+}
