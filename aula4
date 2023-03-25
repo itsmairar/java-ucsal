@@ -1,0 +1,30 @@
+package ucsal;
+
+import java.util.Scanner;
+
+public class QuartoProj {
+
+	/*Estrutura de seleção*/
+
+	public static void main(String[] args) {
+		Scanner obterDados = new Scanner(System.in);
+		final String ERRO = "Você errou!";
+		System.out.println("Escolha o animal invertebrado entre as opções abaixo: "
+				+ "\n 1)Gato \n 2)Cachorro \n 3)Polvo \n 4)Vaca");
+		int escolha = obterDados.nextInt();
+		switch(escolha) {
+		case 1: case 2: case 4:
+			System.out.println(ERRO);
+			break;
+		case 3:
+			System.out.println("Acertou!");
+			break;
+
+		default:
+			System.out.println("Opção invalida");
+			break;
+		}
+
+	}
+
+}
