@@ -1,0 +1,43 @@
+package ucsal;
+
+import java.util.Scanner;
+
+public class DiaDaSemana {
+	/*O usuario vai digitar um valor correspondente ao dia da semana e sua solução vai imprimir o dia
+	 * por extenso. Caso o usuario digite um valor que não está relacionado com um dia da semana, imprima
+	 * valor invalido*/
+	public static void main(String[] args) {
+		Scanner obterDados = new Scanner(System.in);
+		System.out.println("Escolha um número correspondente ao dia da semana: ");
+		int diaDaSemana = obterDados.nextInt();
+		switch(diaDaSemana) {
+		case 1:
+			System.out.println("Domingo");
+			break;
+		case 2:
+			System.out.println("Segunda");
+			break;
+		case 3:
+			System.out.println("Terça");
+			break;
+		case 4:
+			System.out.println("Quarta");
+			break;
+		case 5:
+			System.out.println("Quinta");
+			break;
+		case 6:
+			System.out.println("Sexta");
+			break;
+		case 7:
+			System.out.println("Sabado");
+			break;
+
+		default:
+			System.out.println("Opção invalida");
+			break;
+
+		}
+		obterDados.close();
+	}
+}
