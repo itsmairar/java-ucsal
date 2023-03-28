@@ -1,0 +1,53 @@
+package ucsal;
+
+import java.util.Scanner;
+
+public class ConversorTemp {
+
+	/*O usuario deverá informar um valor de temperatura e escolher para qual será a conversão(de -> para):
+	 * celsius para kelvin
+	 * celsius para fahrenheit
+	 * kelvin para fahrenheit
+	 * kelvin para celsius
+	 * fahrenheit para kelvin
+	 * fahrenheit para celsius*/
+
+	public static void main(String[] args) {
+		Scanner ent = new Scanner(System.in);
+		System.out.println("Informe uma temperatura: ");
+		double temp = ent.nextDouble();
+		System.out.println("Informe a conversão que deseja:\n"
+				+ "\n a-celsius para kelvin"
+				+ "\n b-celsius para fahrenheit"
+				+ "\n c-kelvin para fahrenheit"
+				+ "\n d-kelvin para celsius"
+				+ "\n e-fahrenheit para kelvin"
+				+ "\n f-fahrenheit para celsius");
+		char escolha = ent.next().charAt(0);
+		switch (escolha) {
+		case 'a':
+			System.out.println("A temperatura e: "+(temp + 273.15));
+			break;
+		case 'b':
+			System.out.println("A temperatura e: "+((temp * 1.8) + 32));
+			break;
+		case 'c':
+			System.out.println("A temperatura e: "+((temp - 273.15) * 1.8 + 32 ));
+			break;
+		case 'd':
+			System.out.println("A temperatura e: "+(temp - 273.15));
+			break;
+		case 'e':
+			System.out.println("A temperatura e: "+((temp - 32) * 1.8 + 273.15));
+			break;
+		case 'f':
+			System.out.println("A temperatura e: "+((temp - 32) * 1.8 ));
+			break;
+		default:
+			System.out.println("Opcao invalida");
+			break;
+		}
+		ent.close();
+	}
+
+}
