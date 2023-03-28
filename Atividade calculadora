@@ -1,0 +1,49 @@
+package ucsal;
+
+import java.util.Scanner;
+
+public class Calculadora {
+
+	public static void main(String[] args) {
+		/*Construa uma calculadora para operação com dois valores decimais informados pelo usuario. A calculadora devera 
+		 * calcular o resultado com base na operação escolhida pelo usuario (adição, subtração, multiplicação ou divisão).
+		 * Os valores informados devem estar no intervalo fechado de 1.0 a 10.0 se não tiver imprima VALOR FORA DO INTERVALO*/
+
+		Scanner entrada = new Scanner(System.in);
+		double valor1, valor2;
+		System.out.println("Informe dois valores no intervalo de 0 a 10 para que seja calculado com as\noperacoes disponiveis");
+		System.out.println("Escolha o primeiro valor: ");
+		valor1=entrada.nextDouble();
+		if(valor1>=0 && valor1<=10) {
+			System.out.println("Escolha o segundo valor: ");
+			valor2=entrada.nextDouble();
+			if(valor2 >= 0 && valor2 <=10) {;
+			System.out.println("Informe a operaçao que deseja realizar: \n a)Adicao \n b)Subtracao \n c)Multiplicacao \n d)Divisao");
+			char escolha = entrada.next().charAt(0);
+			switch (escolha) {
+			case 'a':
+				System.out.println("O resultado da soma e: "+(valor1+valor2));
+				break;
+			case 'b':
+				System.out.println("O resultado da subtracao e: "+(valor1-valor2));
+				break;
+			case 'c':
+				System.out.println("O resultado da multiplicacao e: "+(valor1*valor2));
+				break;
+			case 'd':
+				System.out.println("O resultado da divisao e: "+(valor1/valor2));
+				break;
+
+			default:
+				System.out.println("Opcao invalida");
+				break;
+			}
+			}else {
+				System.out.println("Valor fora do intervalo");
+			}
+		}else {
+			System.out.println("Valor fora do intervalo");
+		}
+		entrada.close();
+	}
+}
