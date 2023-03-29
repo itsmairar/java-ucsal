@@ -23,7 +23,7 @@ public class ConversorTemp {
 				+ "\n d-kelvin para celsius"
 				+ "\n e-fahrenheit para kelvin"
 				+ "\n f-fahrenheit para celsius");
-		char escolha = ent.next().charAt(0);
+		char escolha = ent.next().toLowerCase().charAt(0);
 		switch (escolha) {
 		case 'a':
 			System.out.println("A temperatura e: "+(temp + 273.15));
