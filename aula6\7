@@ -1,0 +1,26 @@
+package ucsal;
+
+import java.util.Scanner;
+
+public class EstruturaRep2 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int valor1, valor2, cont=0;
+		boolean verifica=false;
+		do { /*Garantir pelo menos 1 execução do código*/
+			if(verifica == true){
+				cont++;
+				System.out.println("Voce ja errou "+cont+(cont==1 ? " vez":" vezes")+"\n Tente novamente");
+			}
+			verifica=true;
+			System.out.println("informe dois valores: ");
+			valor1=sc.nextInt();
+			valor2=sc.nextInt();
+
+		}while(valor1<0 || valor1>10 || valor2<0  || valor2>10);
+		System.out.println("Falsas");
+		sc.close();
+	}
+
+}
