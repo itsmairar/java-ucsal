@@ -27,19 +27,19 @@ public class compararString {
 
 				switch (cont) {
 				case 1:
-					System.out.println("esta perto");
+					System.out.println("A palavra tem 5 letras");
 					break;
 				case 2:
-					System.out.println("esta perto");
+					System.out.println("Começa com 'A'");
 					break;
 				case 3:
-					System.out.println("esta perto");
+					System.out.println("Termina com 'Z'");
 					break;
 				case 4:
-					System.out.println("esta perto");
+					System.out.println("A letra do meio é 'R'");
 					break;
 				case 5:
-					System.out.println("esta perto");
+					System.out.println("É da família gramíneas");
 					break;
 
 				default:
