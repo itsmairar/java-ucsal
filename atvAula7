@@ -1,0 +1,60 @@
+package ucsal;
+
+import java.util.Scanner;
+
+public class compararString {
+
+
+	/*Faça um programa para que o usuário advinhe uma palavra definida. Só podem ter 5 tentativas e o programa deve dar uma dica
+	 * a cada erro do usuário*/
+
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String palavraOculta = "arroz";
+		String palavraInformada = "";
+		int cont=0;
+
+		do {
+			System.out.println("informe uma palavra");
+			/*Verifica se as letras são minusculas*/
+			palavraInformada=sc.next().toLowerCase();
+			/*verifica se a palavra informada é diferente da palavra oculta.
+			 * Usa equals quando não trabalhamos com tipos primitivos*/
+			if(!palavraOculta.equals(palavraInformada)) {
+				cont ++;
+				System.out.println("Errou");
+
+				switch (cont) {
+				case 1:
+					System.out.println("esta perto");
+					break;
+				case 2:
+					System.out.println("esta perto");
+					break;
+				case 3:
+					System.out.println("esta perto");
+					break;
+				case 4:
+					System.out.println("esta perto");
+					break;
+				case 5:
+					System.out.println("esta perto");
+					break;
+
+				default:
+					System.out.println("Acabaram suas chances");
+					break;
+				}
+
+			}else {
+				System.out.println("Acertou");
+				/*cont=6;*/
+
+
+			}
+		}while(cont<=5 && !palavraOculta.equals(palavraInformada));
+		sc.close();
+	}
+
+}
