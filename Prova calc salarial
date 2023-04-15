@@ -1,0 +1,104 @@
+package br.ucsal;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class CalculoSalarial {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String nome;
+		double salario, aumento, salarioBruto, descIR=0, salarioIR, descINSS=0, salarioAP, salarioPerda, salarioColab;
+		int cont=0;
+		do{
+			System.out.println("Informe seu nome e o seu salario");
+			nome=sc.next();
+			salario=sc.nextDouble();
+			cont ++;
+			Locale.setDefault(Locale.US);
+			System.out.println("Colaborador: "+nome);
+			//salario atual
+			System.out.println("Salario atual: "+salario);
+			//verificando em que bloco de repeticao o salario se encaixa
+			if(salario>15000) {
+				aumento=salario*0.0993;
+			}else if(salario>10000) {
+				aumento=salario*0.0875;
+			}else if(salario>5000) {
+				aumento=salario*0.0825;
+			}else if(salario>4000) {
+				aumento=salario*0.0820;
+			}else if(salario>1000) {
+				aumento=salario*0.038;
+			} else {
+				aumento=0;
+			}
+			//calculando valor do aumento
+			System.out.printf("Valor do aumento: %.2f%n",aumento);
+			//calculando valor do salario bruto
+			salarioBruto =salario+aumento;
+			System.out.println("Salario bruto apos aumento "+salarioBruto);
+			//	IR
+			if(salarioBruto>15000) {
+				descIR = salarioBruto*0.3;
+				if(descIR > 5000) {
+					descIR = 5000;
+				}
+			}else if(salarioBruto>10000){
+				descIR = salarioBruto*0.2;
+				if(descIR > 3000) {
+					descIR = 3000;
+				}
+			}else if(salarioBruto>5000){
+				descIR = salarioBruto*0.1;
+				if(descIR > 1000) {
+					descIR = 1000;
+				}
+			}else {
+				System.out.println("Nao ha aplicacao de IR");
+			}
+			System.out.println("Desconto do IR: "+descIR);
+			//INSS
+			salarioIR=salarioBruto-descIR;
+			if(salarioIR>15000) {
+				descINSS=salarioIR*0.12;
+				if(descINSS>5000) {
+					descINSS=5000;
+				}
+			}else if(salarioIR>7500) {
+				descINSS=salarioIR*0.1;
+				if(descINSS>2500) {
+					descINSS=2500;
+				}
+			}else if(salarioIR>3750) {
+				descINSS=salarioIR*0.09;
+				if(descINSS>500) {
+					descINSS=500;
+				}
+			}else{
+				descINSS=salarioBruto*0.05;
+				if(descINSS>250) {
+					descINSS=250;
+				}
+			}
+
+			salarioAP=salarioBruto-descIR-descINSS;
+			salarioPerda=salario-salarioAP;
+			salarioColab=salarioAP+1000;
+			System.out.printf("Desconto do INSS: %.2f%n",descINSS);
+			System.out.println("salario apurado apos desconto: "+salarioAP);
+			System.out.println("Salario final do colaborador: "+salarioColab);
+			//calculo da perda ou ganho
+			if(salario>salarioColab) {
+				System.out.println("Sua perda foi: "+(salario-salarioColab));
+			}else if(salarioColab>salario) {
+				System.out.println("Seu ganho foi: "+(salarioColab-salario));
+			}else {
+				System.out.println("Nao houve ganho ou perda");
+			}
+
+		}while(cont<=3);
+		sc.close();
+	}
+
+}
