@@ -1,0 +1,23 @@
+package ucsal;
+
+//fibonacci for
+
+public class Repeticao {
+
+	public static void main(String[] args) {
+		//variavel declarada dentro do for é exclusiva para usar dentro da estrutura.
+		//(int i=0;i<10;i++) primeira parte opcional - segunda parte obrigatorio (condição) - terceira parte incremental (ultima coisa a
+		//ser executada dentro da estrutura). 
+		final int QTD=10;
+		for(int termoInicial=0,termoSecundario=1, aux=0, cont=0;cont<QTD;cont++) {
+			System.out.print(termoInicial+" ");
+			aux=termoInicial+termoSecundario;
+			termoInicial=termoSecundario;
+			termoSecundario=aux;
+
+
+		}
+
+	}
+
+}
