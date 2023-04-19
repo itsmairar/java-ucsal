@@ -9,8 +9,11 @@ public class Repeticao {
 		//(int i=0;i<10;i++) primeira parte opcional - segunda parte obrigatorio (condição) - terceira parte incremental (ultima coisa a
 		//ser executada dentro da estrutura). 
 		final int QTD=10;
-		for(int termoInicial=0,termoSecundario=1, aux=0, cont=0;cont<QTD;cont++) {
+		for(int termoInicial=0,termoSecundario=1, aux=0, cont=0;cont<QTD;) {
+			if(termoInicial % 2 != 0) {
 			System.out.print(termoInicial+" ");
+			cont++;
+			}
 			aux=termoInicial+termoSecundario;
 			termoInicial=termoSecundario;
 			termoSecundario=aux;
